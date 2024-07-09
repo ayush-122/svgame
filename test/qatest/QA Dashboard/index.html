@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Interaction</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-test-athletics-flaticons-lineal-color-flat-icons-3.png"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input,
+      select {
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      textarea {
+        margin-bottom: 10px;
+        width: 100%;
+        height: 100px;
+        resize: vertical;
+        box-sizing: border-box;
+      }
+      table {
+        width: 50%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid;
+        text-align: center;
+      }
+      th {
+        height: 70px;
+      }
+      button {
+        padding: 10px;
+        cursor: pointer;
+      }
+      #message {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        display: none;
+      }
+      .error {
+        color: red;
+      }
+      .success {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>API Interaction</h1>
+
+    <label for="urlSelect">Select Server URL:</label>
+    <select id="urlSelect">
+      <option value="http://localhost:3002/v1">Localhost</option>
+      <option value="http://192.168.44.16:8001/v1">LAN Server</option>
+      <option value="http://34.205.135.210/v1">Production Server</option>
+    </select>
+    <br />
+
+    <label for="file">Upload File (only .txt):</label>
+    <input type="file" id="file" accept=".txt" />
+    <br />
+
+    <label for="gameId">Game ID:</label>
+    <input type="text" id="gameId" placeholder="Enter Game ID" required />
+    <br />
+
+    <label for="playerId">Player ID:</label>
+    <input type="text" id="playerId" placeholder="Enter Player ID" required />
+    <br />
+
+    <label for="options">Select Option:</label>
+    <select id="options">
+      <option value="COMMON">COMMON</option>
+    </select>
+    <br />
+
+    <label for="data">Data:</label>
+    <textarea id="data" placeholder="Enter text or upload a file" required></textarea>
+    <br />
+
+    <button onclick="sendData()">Send</button>
+    <button onclick="getData()">Get Data</button>
+    <button onclick="deleteData()">Delete Data</button>
+
+    <div id="message"></div>
+    <div class="responseData" id="responseData"></div>
+
+    <script>
+      function showMessage(message, type) {
+        var messageDiv = document.getElementById("message");
+        messageDiv.innerHTML = message;
+        messageDiv.className = type;
+        messageDiv.style.display = "block";
+        setTimeout(function () {
+          messageDiv.style.display = "none";
+        }, 5000);
+      }
+
+      function showData(data) {
+        var responseData = document.getElementById("responseData");
+        responseData.innerHTML = "";
+        var table = document.createElement("table");
+        var head = document.createElement("tr");
+        head.innerHTML = `<th>ID</th><th>type</th><th>player_id</th><th>game_id</th><th>data</th>`;
+        table.appendChild(head);
+
+        for (let i = 0; i < data.length; i++) {
+          const element = data[i];
+          var row = document.createElement("tr");
+          for (let key in element) {
+            var col = document.createElement("td");
+            col.innerText = element[key];
+            row.appendChild(col);
+          }
+          table.appendChild(row);
+        }
+        responseData.appendChild(table);
+      }
+
+      function sendData() {
+        var gameId = document.getElementById("gameId").value;
+        var playerId = document.getElementById("playerId").value;
+        var option = document.getElementById("options").value;
+        var data = document.getElementById("data").value;
+        var url = document.getElementById("urlSelect").value;
+
+        // Validate inputs
+        if (!gameId || !playerId || !data) {
+          showMessage("Please fill in all required fields", "error");
+          return;
+        }
+
+        gameId = parseInt(gameId);
+        playerId = parseInt(playerId);
+
+        // Assuming you are using fetch API for making HTTP requests
+        fetch(`${url}/qatest/${option}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            player_id: playerId,
+            game_id: gameId,
+            data: data,
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Success:", data);
+            showMessage("Data sent successfully", "success");
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            showMessage("Error sending data", "error");
+          });
+      }
+
+      function getData() {
+        var gameId = document.getElementById("gameId").value;
+        var playerId = document.getElementById("playerId").value;
+        var option = document.getElementById("options").value;
+        var url = document.getElementById("urlSelect").value;
+
+        // Validate inputs
+        if (!gameId || !playerId) {
+          showMessage("Please fill in all required fields", "error");
+          return;
+        }
+
+        gameId = parseInt(gameId);
+        playerId = parseInt(playerId);
+
+        // Assuming you are using fetch API for making HTTP requests
+        fetch(`${url}/qatest/${option}?game_id=${gameId}&player_id=${playerId}`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Data:", data);
+            showData(data.data);
+            showMessage("Data received successfully", "success");
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            showMessage("Error getting data", "error");
+          });
+      }
+
+      function deleteData() {
+        var gameId = document.getElementById("gameId").value;
+        var playerId = document.getElementById("playerId").value;
+        var option = document.getElementById("options").value;
+        var data = document.getElementById("data").value;
+        var url = document.getElementById("urlSelect").value;
+
+        // Validate inputs
+        if (!gameId || !playerId) {
+          showMessage("Please fill in all required fields", "error");
+          return;
+        }
+
+        data = parseInt(data);
+        gameId = parseInt(gameId);
+        playerId = parseInt(playerId);
+
+        // Assuming you are using fetch API for making HTTP requests
+        fetch(`${url}/qatest/${option}/${data || ""}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            player_id: playerId,
+            game_id: gameId,
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("Success:", data);
+            showMessage("Data deleted successfully", "success");
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            showMessage("Error deleting data", "error");
+          });
+      }
+
+      document.getElementById("file").addEventListener("change", function (event) {
+        var input = event.target;
+        var reader = new FileReader();
+
+        reader.onload = function () {
+          var text = reader.result;
+          document.getElementById("data").value = text;
+        };
+
+        reader.readAsText(input.files[0]);
+      });
+    </script>
+  </body>
+</html>

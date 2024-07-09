@@ -1,0 +1,15 @@
+RTP 95
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+    {"cycles":1000000000,"totalBet":40000000000,"totalBaseWon":11948804501,"totalBaseFeatWon":6043774805,"totalFreeWon":7248558352,"totalFreeFeatWon":4982995212,"totalPickBonusWon":8104827660,"totalGameWin":38328960530,"doPrint":0}
+    The Main Output 
+    ****************
+    BaseWinPct:29.87% | BaseFeatWinPct: 15.11% | FreeWinPct: 18.12% | FreeFeatPercent: 12.46% | PickWinPct: 20.26% |  TotalWinPct: 95.82% 
+Expected:
+    Game RTP	            95.84%
+    Base game RTP	        29.87%
+    EX.BASE	                15.10%
+    Free Gme RTP	        18.12%
+    EX.FREE	                12.46%
+    Bonus Game	            20.28%
+

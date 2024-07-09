@@ -1,0 +1,11 @@
+RTP 95
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+  {"cycles":1000000000,"totalBet":25000000000,"totalBaseWon":10099117237,"totalFreeWon":8149554304,"totalRespinWon":5486860199,"totalGameWin":23735531740,"doPrint":0}
+  BaseWinPct: 40.40% | FreeWinPct: 32.60% | RespinWinPct: 21.95% | TotalWinPct: 94.94%  
+
+Expected:
+  Game RTP	            94.94%
+  Base game RTP	        40.40%
+  Free Gme RTP	        32.60%
+  Respin	              21.94%

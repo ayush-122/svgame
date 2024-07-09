@@ -1,0 +1,235 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ****************** Player ******************
+model request_log {
+  id             Int      @id @default(autoincrement())
+  client_ip      String
+  timestamp      DateTime
+  method         String
+  url            String
+  user_agent     String
+  status_code    Int
+  content_length Int?
+  response_time  Float?
+  protocol       String?
+  path           String?
+  query          Json?
+  request_body   Json?
+  request_params Json?
+  request_query  Json?
+}
+
+model players {
+  player_id           BigInt                @id @default(autoincrement())
+  username            String                @unique
+  fullname            String?
+  password            String
+  email               String?
+  wallet              wallets               @relation(fields: [wallet_id], references: [wallet_id])
+  created_at          DateTime              @default(now())
+  wallet_id           String                @unique
+  spin_audits         spin_audits[]
+  keno_audits         keno_audits[]
+  cascade_audits      cascade_audits[]
+  feature_keno_audits feature_keno_audits[]
+  ways_audits         ways_audits[]
+}
+
+// ****************** Wallet ******************
+
+model wallets {
+  wallet_id           String                @id @default(uuid())
+  balance             Float
+  last_updated        DateTime              @updatedAt
+  players             players?
+  wallet_transactions wallet_transactions[]
+  isBlocked           Boolean               @default(false)
+}
+
+model wallet_transactions {
+  wallet_log_id     BigInt    @id @default(autoincrement())
+  wallet            wallets   @relation(fields: [wallet_id], references: [wallet_id])
+  wallet_id         String
+  amount            Float
+  current_balance   Float
+  transaction_type  String
+  success           Boolean
+  client_ip_address String
+  timestamp         DateTime  @default(now())
+  audit_type        AuditType // Enum field for audit type
+  audit_id          BigInt // ID of the referenced audit
+
+  @@index([audit_type, audit_id], name: "audit_index")
+}
+
+// Enum to define different types of audits
+enum AuditType {
+  SPIN
+  KENO
+  FEATURE_KENO
+  CASCADE
+  WAYS
+  USER_ADDED
+  // Add other audit types as needed
+}
+
+// ****************** GamePlay Schema ******************
+model spin_audits {
+  spin_id           BigInt  @id @unique @default(autoincrement())
+  spin_request_id   BigInt?
+  game_type         String
+  client_ip_address String
+  player            players @relation(fields: [player_id], references: [player_id])
+  player_id         BigInt //reference to be added
+  game              games   @relation(fields: [game_id], references: [game_id])
+  game_id           Int //reference to be added
+
+  //Game Details
+  current_state     String?
+  next_state        String?
+  current_free_spin Int
+  total_free_spin   Int
+  raw_request       Json
+  raw_response      Json? //state
+  created_at        DateTime @default(now())
+  isCompleted       Boolean
+}
+
+model keno_audits {
+  keno_id           BigInt   @id @unique @default(autoincrement())
+  client_ip_address String
+  credits           Float
+  bet               Int
+  risk_level        String
+  bet_numbers       Int[]
+  player            players  @relation(fields: [player_id], references: [player_id])
+  player_id         BigInt //reference to be added
+  game              games    @relation(fields: [game_id], references: [game_id])
+  game_id           Int //reference to be added
+  win_multiplier    Float
+  total_won         Float
+  raw_response      Json? //state
+  created_at        DateTime @default(now())
+  isCompleted       Boolean
+}
+
+model feature_keno_audits {
+  feature_keno_id         BigInt   @id @unique @default(autoincrement())
+  feature_keno_request_id BigInt?
+  client_ip_address       String
+  current_state           String
+  next_state              String
+  number_count            Int
+  next_state_details      Json
+  credits                 Float
+  bet                     Int
+  total_bet               Int
+  extra_draw_count        Int
+  bet_numbers             Int[]
+  drawn_numbers           Int[]
+  win_numbers             Int[]
+  feature_symbols         String[]
+  feature_symbol_hit      Json
+  bonus_multiplier        Int
+  player                  players  @relation(fields: [player_id], references: [player_id])
+  player_id               BigInt //reference to be added
+  game                    games    @relation(fields: [game_id], references: [game_id])
+  game_id                 Int //reference to be added
+  win                     Float
+  payout_multiplier       Float
+  total_won               Float
+  created_at              DateTime @default(now())
+  isCompleted             Boolean
+}
+
+// ****************** Game Schema ******************
+model games {
+  game_id             Int                   @id
+  game_name           String
+  type                String
+  spin_audits         spin_audits[]
+  keno_audits         keno_audits[]
+  cascade_audits      cascade_audits[]
+  feature_keno_audits feature_keno_audits[]
+  ways_audits         ways_audits[]
+}
+
+// ! ********************************* QA TEST ************************************************
+model qa_test {
+  qa_test_id Int    @id @unique @default(autoincrement())
+  type       String
+  player_id  Int
+  game_id    Int
+  data       String
+}
+
+// ****************** GamePlay Schema ******************
+model cascade_audits {
+  cascade_id         BigInt   @id @unique @default(autoincrement())
+  cascade_request_id BigInt?
+  client_ip_address  String
+  player             players  @relation(fields: [player_id], references: [player_id])
+  player_id          BigInt // Reference to player_id
+  game               games    @relation(fields: [game_id], references: [game_id])
+  game_id            Int // Reference to game_id
+  current_state      String?
+  next_state         String?
+  current_free_spin  Int
+  total_free_spin    Int
+  current_cascade    Int
+  total_cascades     Int
+  created_at         DateTime @default(now())
+  isCompleted        Boolean
+
+  // Response fields
+  base_bet                 Int
+  credit_value             Int
+  bet_multiplier           Int
+  reel_mode                Int
+  matrix                   Json
+  payline                  Json
+  star_positions           Json
+  cascading_win_progress   Json
+  star                     Json
+  free_game                Json
+  main_spin_credits_won    Int
+  credits_won_on_base_spin Int
+  base_game_cascade_won    Int
+  free_spin_credits_won    Int
+  free_game_cascade_won    Int
+  free_spin_total_won      Int
+  total_credits_won        Int
+  credits_wagered          Int
+  final_winnings           Json
+  cascade_progress         Int
+  last_cascading_reels     Int
+}
+
+model ways_audits {
+  ways_id           BigInt   @id @unique @default(autoincrement())
+  ways_request_id   BigInt?
+  game_type         String
+  client_ip_address String
+  player            players  @relation(fields: [player_id], references: [player_id])
+  player_id         BigInt //reference to be added
+  game              games    @relation(fields: [game_id], references: [game_id])
+  game_id           Int //reference to be added
+  current_state     String?
+  next_state        String?
+  current_free_ways Int
+  total_free_ways   Int
+  raw_request       Json
+  raw_response      Json? //state
+  created_at        DateTime @default(now())
+  isCompleted       Boolean
+}

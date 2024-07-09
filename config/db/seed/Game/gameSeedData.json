@@ -1,0 +1,92 @@
+[
+  {
+    "game_id": 1001,
+    "game_name": "Buffalo",
+    "type": "Line"
+  },
+  {
+    "game_id": 1002,
+    "game_name": "DiamondPanther",
+    "type": "Line"
+  },
+  {
+    "game_id": 1003,
+    "game_name": "WildGold",
+    "type": "Line"
+  },
+  {
+    "game_id": 1004,
+    "game_name": "ChiliChili",
+    "type": "Line"
+  },
+  {
+    "game_id": 1005,
+    "game_name": "Samurai's Fortune",
+    "type": "Line"
+  },
+  {
+    "game_id": 1006,
+    "game_name": "Sweep Stake",
+    "type": "Line"
+  },
+  {
+    "game_id": 1007,
+    "game_name": "Book of Egypt",
+    "type": "Line"
+  },
+  {
+    "game_id": 1008,
+    "game_name": "Rolling Rocking",
+    "type": "Line"
+  },
+  {
+    "game_id": 1009,
+    "game_name": "Saint Patrick",
+    "type": "Line"
+  },
+  {
+    "game_id": 1010,
+    "game_name": "Fire Short Inferno",
+    "type": "Line"
+  },
+  {
+    "game_id": 1011,
+    "game_name": "Bunny Bunny",
+    "type": "Line"
+  },
+  {
+    "game_id": 1012,
+    "game_name": "Thunder God",
+    "type": "Line"
+  },
+  {
+    "game_id": 1013,
+    "game_name": "Stampede Fury",
+    "type": "Line"
+  },
+  {
+    "game_id": 1014,
+    "game_name": "Fruit Fiesta",
+    "type": "Line"
+  },
+  {
+    "game_id": 2010,
+    "game_name": "CowboyKeno",
+    "type": "Feature Keno"
+  },
+  {
+    "game_id": 2016,
+    "game_name": "MonkeyKeno",
+    "type": "Keno"
+  },
+  {
+    "game_id": 3001,
+    "game_name": "MilkyWays",
+    "type": "Ways Cascade"
+  },
+  {
+    "game_id": 4001,
+    "game_name": "GoldenEagle",
+    "type": "Ways"
+  }
+]

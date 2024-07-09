@@ -1,0 +1,73 @@
+RTP 95
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+The Main Output 
+****************
+  BaseWinPct: 53.61% | FreeWinPct: 30.26% | WheelWinPct: 11.33% |  TotalWinPct: 95.20% | FreeOdds3: 63.93 | FreeOdds4: 1190.01 | FreeOdds5: 61557.40| FreeOddsTotal: 60.61 | WheelOddsTotal: 659.66 
+
+Expected:
+  Game RTP	        95.19%
+  Base game RTP	    53.61%
+  Free Gme RTP	    30.24%
+  Bonus Game	      11.34%
+  Buy FG	          30.24%
+
+RTP 90
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+{"cycles":1000000000,"totalBet":30000000000,"totalBaseWon":14232760865,"totalFreeWon":9465202818,"totalWheelWon":3473629400,"totalGameWin":27171593083,"doPrint":0,"freeGameOdds3":16319119,"freeGameOdds4":869093,"freeGameOdds5":16338,"freeGameOddsAll":17204550,"wheelGameOddsAll":1547500}
+The Main Output 
+****************
+  BaseWinPct: 47.44% | FreeWinPct: 31.55% | WheelWinPct: 11.58% |  TotalWinPct: 90.57% | FreeOdds3: 61.28 | FreeOdds4: 1150.62 | FreeOdds5: 61207.00| FreeOddsTotal: 58.12 | WheelOddsTotal: 646.20 
+
+Expected:
+  Game RTP	       90.56%
+  Base game RTP	   47.44%
+  Free Gme RTP	   31.53%
+  Bonus Game	     11.58%
+  Buy FG	         31.53%
+
+RTP 80
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+{"cycles":1000000000,"totalBet":30000000000,"totalBaseWon":11391196386,"totalFreeWon":9342186080,"totalWheelWon":3377584440,"totalGameWin":24110966906,"doPrint":0,"freeGameOdds3":16123071,"freeGameOdds4":850183,"freeGameOdds5":15715,"freeGameOddsAll":16988969,"wheelGameOddsAll":1504493}
+The Main Output 
+****************
+  BaseWinPct: 37.97% | FreeWinPct: 31.14% | WheelWinPct: 11.26% |  TotalWinPct: 80.37% | FreeOdds3: 62.02 | FreeOdds4: 1176.22 | FreeOdds5: 63633.47| FreeOddsTotal: 58.86 | WheelOddsTotal: 664.68 
+
+Expected:
+  Game RTP	      80.38%
+  Base game RTP	  37.97%
+  Free Gme RTP	  31.15%
+  Bonus Game	    11.25%
+  Buy FG	        31.15%
+
+RTP 70
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+{"cycles":1000000000,"totalBet":30000000000,"totalBaseWon":10519485657,"totalFreeWon":7535929837,"totalWheelWon":2995415970,"totalGameWin":21050831464,"doPrint":0,"freeGameOdds3":14621728,"freeGameOdds4":752827,"freeGameOdds5":13892,"freeGameOddsAll":15388447,"wheelGameOddsAll":1337214}
+The Main Output 
+****************
+  BaseWinPct: 35.06% | FreeWinPct: 25.12% | WheelWinPct: 9.98% |  TotalWinPct: 70.17% | FreeOdds3: 68.39 | FreeOdds4: 1328.33 | FreeOdds5: 71983.88| FreeOddsTotal: 64.98 | WheelOddsTotal: 747.82 
+
+Expected:
+  Game RTP	      70.19%
+  Base game RTP	  35.06%
+  Free Gme RTP	  25.12%
+  Bonus Game	    10.00%
+  Buy FG	        25.12%
+
+RTP 60
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+{"cycles":1000000000,"totalBet":30000000000,"totalBaseWon":8616431696,"totalFreeWon":6273674576,"totalWheelWon":3126377720,"totalGameWin":18016483992,"doPrint":0,"freeGameOdds3":14991053,"freeGameOdds4":782982,"freeGameOdds5":14399,"freeGameOddsAll":15788434,"wheelGameOddsAll":1394745}
+The Main Output 
+****************
+  BaseWinPct: 28.72% | FreeWinPct: 20.91% | WheelWinPct: 10.42% |  TotalWinPct: 60.05% | FreeOdds3: 66.71 | FreeOdds4: 1277.17 | FreeOdds5: 69449.27| FreeOddsTotal: 63.34 | WheelOddsTotal: 716.98 
+
+Expected:
+  Game RTP	          60.06%
+  Base game RTP	      28.72%
+  Free Gme RTP	      20.90%
+  Bonus Game	        10.43%
+  Buy FG	            20.90%

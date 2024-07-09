@@ -1,0 +1,78 @@
+{
+  "1001": {
+    "name": "Buffalo",
+    "bet": "30"
+  },
+  "1002": {
+    "name": "Diamond Panther",
+    "bet": "20"
+  },
+  "1003": {
+    "name": "Wild Gold",
+    "bet": "20"
+  },
+  "1004": {
+    "name": "Chili Chili",
+    "bet": "20"
+  },
+  "1005": {
+    "name": "Samurai's Fortune",
+    "bet": "20"
+  },
+  "1006": {
+    "name": "SweepStake",
+    "bet": "40"
+  },
+  "1007": {
+    "name": "Book of Egypt",
+    "bet": "40"
+  },
+  "1008": {
+    "name": "Rolling Rocking",
+    "bet": "20"
+  },
+  "1009": {
+    "name": "Saint Patrick",
+    "bet": "20"
+  },
+  "1010": {
+    "name": "Fire Short Inferno",
+    "bet": "25"
+  },
+  "1011": {
+    "name": "Bunny Bunny",
+    "bet": "40"
+  },
+  "1012": {
+    "name": "Thunder God",
+    "bet": "40"
+  },
+  "1013": {
+    "name": "Stampede Fury",
+    "bet": "30"
+  },
+  "1014": {
+    "name": "Fruit Fiesta",
+    "bet": "20"
+  },
+  "1015": {
+    "name": "Infective Wild",
+    "bet": "20"
+  },
+  "2016": {
+    "name": "Monkey Keno",
+    "bet": "20"
+  },
+  "2010": {
+    "name": "Cowboy Keno",
+    "bet": "2"
+  },
+  "3001": {
+    "name": "Milky Ways",
+    "bet": "20"
+  },
+  "4001": {
+    "name": "Golden Eagle",
+    "bet": "20"
+  }
+}

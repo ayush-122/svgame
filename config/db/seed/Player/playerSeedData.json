@@ -1,0 +1,59 @@
+[
+  {
+    "username": "pavitra",
+    "password": "pavitra",
+    "balance": 100000.6,
+    "fullname": "Pavitra Sharma",
+    "email": "pavitra@example.com"
+  },
+  {
+    "username": "t1",
+    "password": "t1",
+    "balance": 500,
+    "fullname": "Test User 1",
+    "email": "test1@example.com"
+  },
+  {
+    "username": "t2",
+    "password": "t2",
+    "balance": 750,
+    "fullname": "Test User 2",
+    "email": "test2@example.com"
+  },
+  {
+    "username": "t3",
+    "password": "t3",
+    "balance": 1200,
+    "fullname": "Test User 3",
+    "email": "test3@example.com"
+  },
+  {
+    "username": "t4",
+    "password": "t4",
+    "balance": 100000.6,
+    "fullname": "Test User 4",
+    "email": "test4@example.com"
+  },
+
+  {
+    "username": "p1",
+    "password": "p1",
+    "balance": 1500000.75,
+    "fullname": "John Doe",
+    "email": "john@example.com"
+  },
+  {
+    "username": "rohit",
+    "password": "rohit",
+    "balance": 1750325.45,
+    "fullname": "Rohit Kumar",
+    "email": "rohit@example.com"
+  },
+  {
+    "username": "kanishka6",
+    "password": "kanishka6",
+    "balance": 1280000.25,
+    "fullname": "Kanishka Singh",
+    "email": "kanishka@example.com"
+  }
+]

@@ -1,0 +1,65 @@
+RTP 95
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+  {"cycles":1000000000,"totalBet":20000000000,"totalBaseWon":6072817725,"totalBaseWildWon":3053141076,"totalFreeWildWon":3586648692,"totalFreeWon":6328453685,"totalWheelWon":0,"totalGameWin":19041061178,"doPrint":0,"freeGameOdds3":9895909,"freeGameOdds4":567453,"freeGameOdds5":12710,"freeGameOddsAll":10476072}
+  BaseWinPct: 30.36% | ExpandingWildBasePct: 15.27% | FreeWinPct: 31.64% | ExpandingWildFreePct: 17.93% |  TotalWinPct: 95.21% | FreeOdds3: 101.05 | FreeOdds4: 1762.26 | FreeOdds5: 78678.21| FreeOddsTotal: 95.46WinPct: 30.36% | ExpandingWildBasePct: 15.26% | FreeWinPct: 31.63% | ExpandingWildFreePct: 17.91% |  TotalWinPct: 95.15% | FreeOdds3: 101.08 | FreeOdds4: 1765.68 | FreeOdds5: 79302.14| FreeOddsTotal: 95.49
+
+Expected: 
+  Game RTP	                    95.20%
+  Base game RTP	                30.37%
+  Expanding wild RTP	          15.25%
+  Free Gme RTP	                31.65%
+  Feature Expanding wild RTP	  17.92%
+
+RTP 90
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+  "cycles":1000000000,"totalBet":20000000000,"totalBaseWon":6073076690,"totalBaseWildWon":3053365107,"totalFreeWildWon":3341006982,"totalFreeWon":5575052731,"totalWheelWon":0,"totalGameWin":18042501510,"doPrint":0,"freeGameOdds3":9890012,"freeGameOdds4":567402,"freeGameOdds5":12662,"freeGameOddsAll":10470076}
+  aseWinPct: 30.37% | ExpandingWildBasePct: 15.27% | FreeWinPct: 27.88% | ExpandingWildFreePct: 16.71% |  TotalWinPct: 90.21% | FreeOdds3: 101.11 | FreeOdds4: 1762.42 | FreeOdds5: 78976.47| FreeOddsTotal: 95.51
+
+Expected:
+  Game RTP	                    90.20%
+  Base game RTP	                30.37%
+  Expanding wild RTP	          15.26%
+  Free Gme RTP	                27.89%
+  Feature Expanding wild RTP	  16.68%
+
+RTP 80
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+  {"cycles":1000000000,"totalBet":20000000000,"totalBaseWon":6072167438,"totalBaseWildWon":3050732805,"totalFreeWildWon":2632117668,"totalFreeWon":4375761526,"totalWheelWon":0,"totalGameWin":16130779437,"doPrint":0,"freeGameOdds3":9896657,"freeGameOdds4":567323,"freeGameOdds5":12723,"freeGameOddsAll":10476703}
+  BaseWinPct: 30.36% | ExpandingWildBasePct: 15.25% | FreeWinPct: 21.88% | ExpandingWildFreePct: 13.16% |  TotalWinPct: 80.65% | FreeOdds3: 101.04 | FreeOdds4: 1762.66 | FreeOdds5: 78597.81| FreeOddsTotal: 95.45
+
+Expected:
+  Game RTP	                    80.67%
+  Base game RTP	                30.37%
+  Expanding wild RTP	          15.26%
+  Free Gme RTP	                21.88%
+  Feature Expanding wild RTP	  13.16%
+
+RTP 70
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+  {"cycles":1000000000,"totalBet":20000000000,"totalBaseWon":6073879662,"totalBaseWildWon":3049795850,"totalFreeWildWon":1740337345,"totalFreeWon":3231097000,"totalWheelWon":0,"totalGameWin":14095109857,"doPrint":0,"freeGameOdds3":9899208,"freeGameOdds4":566089,"freeGameOdds5":12585,"freeGameOddsAll":10477882}
+  BaseWinPct: 30.37% | ExpandingWildBasePct: 15.25% | FreeWinPct: 16.16% | ExpandingWildFreePct: 8.70% |  TotalWinPct: 70.48% | FreeOdds3: 101.02 | FreeOdds4: 1766.51 | FreeOdds5: 79459.67| FreeOddsTotal: 95.44
+
+Expected:
+  Game RTP	                    70.49%
+  Base game RTP	                30.37%
+  Expanding wild RTP	          15.26%
+  Free Gme RTP	                16.15%
+  Feature Expanding wild RTP	  8.70%
+
+RTP 60
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Emulation Result:
+  {"cycles":1000000000,"totalBet":20000000000,"totalBaseWon":6072502254,"totalBaseWildWon":3050271156,"totalFreeWildWon":974625331,"totalFreeWon":2079839744,"totalWheelWon":0,"totalGameWin":12177238485,"doPrint":0,"freeGameOdds3":9898529,"freeGameOdds4":566449,"freeGameOdds5":12588,"freeGameOddsAll":10477566}
+  BaseWinPct: 30.36% | ExpandingWildBasePct: 15.25% | FreeWinPct: 10.40% | ExpandingWildFreePct: 4.87% |  TotalWinPct: 60.89% | FreeOdds3: 101.03 | FreeOdds4: 1765.38 | FreeOdds5: 79440.74| FreeOddsTotal: 95.44
+
+Expected:
+  Game RTP	                    60.90%
+  Base game RTP	                30.37%
+  Expanding wild RTP	          15.26%
+  Free Gme RTP	                10.40%
+  Feature Expanding wild RTP	  4.87%
+
